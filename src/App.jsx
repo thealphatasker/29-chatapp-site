@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ChatRoom from "./components/ChatRoom";
 import ClickSpark from "./components/ClickSpark";
 import Silk from "./components/Silk";
+import LoadingScreen from "./components/LoadingScreen";
 import "./App.css";
 import { io } from "socket.io-client";
 import { IoChatbubblesOutline } from "react-icons/io5";
@@ -11,9 +12,15 @@ const SOCKET_URL = "http://localhost:5050";
 let socket;
 
 function App() {
+  const [loading, setLoading] = useState(true);
   const [joined, setJoined] = useState(false);
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 3200);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     socket = io(SOCKET_URL);
@@ -36,6 +43,7 @@ function App() {
 
   return (
     <>
+      {loading && <LoadingScreen />}
       <Silk
         speed={4}
         scale={1.2}
