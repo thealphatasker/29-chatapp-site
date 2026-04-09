@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-deep: #07071a;
+  --bg-card: #0e0e24;
+  --bg-surface: #13132e;
+  --glass: rgba(255, 255, 255, 0.035);
+  --glass-h: rgba(255, 255, 255, 0.065);
+  --border: rgba(255, 255, 255, 0.07);
+  --border-h: rgba(255, 255, 255, 0.14);
+
+  --p: #8b5cf6;
+  --p2: #a78bfa;
+  --c: #22d3ee;
+  --p-glow: rgba(139, 92, 246, 0.45);
+  --c-glow: rgba(34, 211, 238, 0.3);
+  --p-dim: rgba(139, 92, 246, 0.15);
+
+  --txt: #f0f0ff;
+  --txt-2: #9090b8;
+  --txt-3: #4a4a72;
+
+  --own-bg: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+  --red: #f87171;
+  --red-dim: rgba(248, 113, 113, 0.12);
+  --green: #34d399;
+
+  --r1: 6px;
+  --r2: 12px;
+  --r3: 18px;
+  --r4: 24px;
+  --r5: 32px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg-deep);
+  color: var(--txt);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.35);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.6);
+}
